@@ -69,7 +69,7 @@ int main(int argc, char *argv[]){
     //设置列的宽度。width是小部件的宽度
     tree.setColumnWidth(0,tree.width() / 3);
 
-    tree.setWindowTitle(QObject::tr("本地文件目录"));
+    tree.setWindowTitle(QObject::tr("本地文件目录")); //窗口标题
     tree.show();
 
 
