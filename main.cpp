@@ -65,7 +65,7 @@ int main(int argc, char *argv[]){
 
     //screen小部件所在的屏幕。availableGeometry此属性以像素为单位保存屏幕上可用的几何图形
     const QSize availableSize = tree.screen()->availableGeometry().size();
-    tree.resize(availableSize / 2); //小部件大小
+    tree.resize(availableSize / 3); //小部件大小
     //设置列的宽度。width是小部件的宽度
     tree.setColumnWidth(0,tree.width() / 3);
 
