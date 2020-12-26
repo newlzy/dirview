@@ -6,15 +6,34 @@
 #include <QScreen> //查询屏幕属性
 #include <QTreeView> //默认的树视图
 #pragma execution_character_set("utf-8")
+#include <QDebug>
 
 
 int main(int argc, char *argv[]){
 
     QApplication app(argc, argv);
 
+    QCommandLineOption p1("a");
+    QCommandLineOption p2("b");
+    QCommandLineOption p3("c");
+
+    QCommandLineParser pa;
+    pa.addOption(p1);
+    pa.addOption(p2); //添加解析项
+    pa.addOption(p3);
+    pa.process(app); //处理命令行参数
+
+    qDebug()<< pa.isSet(p1);
+    qDebug()<< pa.isSet(p2);
+    qDebug()<< pa.isSet(p3);
+    qDebug()<< pa.addOption(p1);
+    qDebug()<< pa.addOption(p2);
+    qDebug()<< pa.isSet(p3);
+    qDebug()<< pa.isSet(p3);
+
     //设置程序的版本
     QCoreApplication::setApplicationVersion(QT_VERSION_STR);
-    QCommandLineParser parser;
+    QCommandLineParser parser; //处理命令行选项的方法
     //设置应用程序描述
     parser.setApplicationDescription("本地文件树视图");
     parser.addHelpOption(); //显示应用程序描述
