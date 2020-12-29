@@ -16,20 +16,21 @@ int main(int argc, char *argv[]){
     QCommandLineOption p1("a");
     QCommandLineOption p2("b");
     QCommandLineOption p3("c");
+    QCommandLineOption p4("fjk");
 
     QCommandLineParser pa;
+    //qDebug()<< pa.isSet(p1);
     pa.addOption(p1);
     pa.addOption(p2); //添加解析项
     pa.addOption(p3);
     pa.process(app); //处理命令行参数
 
-    qDebug()<< pa.isSet(p1);
-    qDebug()<< pa.isSet(p2);
-    qDebug()<< pa.isSet(p3);
-    qDebug()<< pa.addOption(p1);
-    qDebug()<< pa.addOption(p2);
-    qDebug()<< pa.isSet(p3);
-    qDebug()<< pa.isSet(p3);
+//    qDebug()<< pa.isSet(p2);
+//    qDebug()<< pa.addOption(p4);
+//    qDebug()<< pa.isSet(p1);
+//    qDebug()<< pa.addOption(p2);
+//    qDebug()<< pa.isSet(p3);
+//    qDebug()<< pa.isSet(p3);
 
     //设置程序的版本
     QCoreApplication::setApplicationVersion(QT_VERSION_STR);
@@ -43,6 +44,7 @@ int main(int argc, char *argv[]){
     QCommandLineOption dontUseCustomDirectoryIconsOption("c","Set QFileSystemModel::DontUseCustomDirectoryIcons");
     //添加在解析时查找的选项
     parser.addOption(dontUseCustomDirectoryIconsOption);
+    qDebug()<< parser.addOption(dontUseCustomDirectoryIconsOption);
 
     //不将文件观察者添加到路径中
     QCommandLineOption dontWatchOption("w","Set QFileSystemModel::DontWatch");
